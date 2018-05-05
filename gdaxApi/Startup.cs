@@ -27,7 +27,7 @@ namespace gdaxApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "JITA Gdax API", Version = "v1" });
             });
         }
 
@@ -44,7 +44,7 @@ namespace gdaxApi
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "JITA Gdax API v2");
             });
         }
     }
