@@ -10,7 +10,7 @@ namespace gdaxApi.Model
         public decimal currentPrice = 0;
         public string coinName = "BTC";
         public Client user = new Client();
-        public class HistoryDTO
+        public class btcHistoryDTO
         {
             public decimal close { get; set; }
             public DateTime time { get; set; }
@@ -23,13 +23,13 @@ namespace gdaxApi.Model
             return btcTicker.Price.ToString();
         }
 
-        public async Task<List<HistoryDTO>> GetBtcHistory()
+        public async Task<List<btcHistoryDTO>> GetBtcHistory()
         {
-            List<HistoryDTO> dto = new List<HistoryDTO>();
+            List<btcHistoryDTO> dto = new List<btcHistoryDTO>();
             dynamic btcHistory = await user.gdaxClient.ProductsService.GetHistoricRatesAsync(GDAXSharp.Shared.Types.ProductType.BtcUsd,DateTime.UtcNow,DateTime.UtcNow,GDAXSharp.Services.Products.Types.CandleGranularity.Hour1);
             foreach(var x in btcHistory)
             {
-                HistoryDTO temp = new HistoryDTO();
+                btcHistoryDTO temp = new btcHistoryDTO();
                 temp.close = x.Close;
                 temp.time = x.Time;
                 dto.Add(temp);

@@ -3,34 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using gdaxApi.Model;
-using GDAXSharp.Network.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using static gdaxApi.Model.Bitcoin;
+using static gdaxApi.Model.Ethereum;
 
 namespace gdaxApi.Controllers
 {
     //[Produces("application/json")]
     [Route("api/[controller]")]
-    public class BtcController : Controller
+    public class EthController : Controller
     {
-
         public Client user = new Client();
-        public Bitcoin btc = new Bitcoin();
+        public Ethereum eth = new Ethereum();
         // GET api/BTC
-        [Route("/btcTicker")]
+        [Route("/ethTicker")]
         [HttpGet]
         public async Task<string> GetTickerAsync()
         {
-            return await btc.GetBtcTickerAsync();
+            return await eth.GetEthTickerAsync();
         }
 
-        [Route("/btcHistory")]
+        [Route("/ethHistory")]
         [HttpGet]
-        public async Task<List<btcHistoryDTO>> GetHistoryAsync()
+        public async Task<List<ethHistoryDTO>> GetHistoryAsync()
         {
-            return await btc.GetBtcHistory();
+            return await eth.GetEthHistory();
         }
-
     }
 }
