@@ -8,7 +8,7 @@ namespace gdaxApi.Model
     public class Litecoin
     {
         public string coinName = "ETH";
-        public Client user = new Client();
+        public Client user = Client.Instance;
         public class ltcHistoryDTO
         {
             public decimal close { get; set; }

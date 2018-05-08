@@ -9,7 +9,7 @@ namespace gdaxApi.Model
     {
         public decimal currentPrice = 0;
         public string coinName = "BTC";
-        public Client user = new Client();
+        public Client user = Client.Instance;
         public class btcHistoryDTO
         {
             public decimal close { get; set; }
