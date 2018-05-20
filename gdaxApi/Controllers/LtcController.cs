@@ -13,7 +13,7 @@ namespace gdaxApi.Controllers
     [Route("api/[controller]")]
     public class LtcController : Controller
     {
-        public Client user = new Client();
+        //public Client user = new Client();
         public Litecoin ltc = new Litecoin();
         // GET api/BTC
         [Route("/ltcTicker")]

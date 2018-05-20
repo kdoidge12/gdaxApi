@@ -13,7 +13,7 @@ namespace gdaxApi.Controllers
     [Route("api/[controller]")]
     public class EthController : Controller
     {
-        public Client user = new Client();
+        //public Client user = new Client();
         public Ethereum eth = new Ethereum();
         // GET api/BTC
         [Route("/ethTicker")]

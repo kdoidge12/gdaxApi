@@ -8,10 +8,10 @@ namespace gdaxApi.Model
 {
     public class Client
     {
-        private string apiKey = "ad5a8d1652dba099a2057b3d3c066c93";
-        private string secret = "I034PbAsVNTPduY6Uwuf3r4gJs7AuC/ptGqzcq3UTDFgXuHD75xCt8Di8K8eYxlCq/CDjUosT4F40gNf9iczzQ==";
+        private string apiKey = "4634071487a02c513b59a82b7122ffda";
+		private string secret = "wAq4uoWu+KiuuuXwGm19ILhNojBfCNiKbNQVsyyo22XqEZYqfjm5GHzkS1trjVbVjJo22P6hX5GVvwthAJwcmg==";
         private string passphrase = "JITA";
-        private static Client instance = null;
+        private static Client _instance = null;
         public GDAXSharp.GDAXClient gdaxClient = null;
         public Authenticator authenticator = null;
         private static readonly object padlock = new object();
@@ -28,11 +28,11 @@ namespace gdaxApi.Model
             {
                 lock (padlock)
                 {
-                    if (instance == null)
+                    if (_instance == null)
                     {
-                        instance = new Client();
+                        _instance = new Client();
                     }
-                    return Instance;
+                    return _instance;
                 }            
             }
         }

@@ -15,7 +15,7 @@ namespace gdaxApi.Controllers
     public class BtcController : Controller
     {
 
-        public Client user = new Client();
+        //public Client user = new Client();
         public Bitcoin btc = new Bitcoin();
         // GET api/BTC
         [Route("/btcTicker")]
